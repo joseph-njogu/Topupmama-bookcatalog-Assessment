@@ -1,27 +1,25 @@
 <?php
-
 namespace App;
-
 use Illuminate\Database\Eloquent\Model;
-
-class Author extends Model
+class Book extends Model
 {
-    public function books()
+    /**
+     * Get the author that this book belongs to
+     */
+    public function author()
     {
-        return [this->hasMany('\App\Book');
+        return $this->belongsTo('\App\Author');
     }
-
     /**
      * The attributes that are mass assignable.
      *
      * @var array
      */
     protected $fillable = [
-        'first_name', 'last_name', 'email', 'location'
+        'title', 'author_id'
     ];
-
     /**
-     * The attributes excluded from the model's JSON form.
+     * The attributes that are excluded from the model's JSON form.
      *
      * @var array
      */

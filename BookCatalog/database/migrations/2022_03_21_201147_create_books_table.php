@@ -15,10 +15,15 @@ return new class extends Migration
     {
         Schema::create('books', function (Blueprint $table) {
             $table->id();
-            $table->string('name');
+            $table->string('title');
             $table->string('description');
-            $table->date('time');
             $table->timestamps();
+
+            $table->bigInteger('author_id')->unsigned();
+            $table->foreign('author_id')
+                  ->references('id')
+                  ->on('authors')
+                  ->onDelete('cascade');
         });
     }
 
