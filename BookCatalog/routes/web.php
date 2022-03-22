@@ -33,18 +33,18 @@ $router->get('/authors/{author_id}/books', ['uses' => 'AuthorController@showAllB
 $router->get('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorController@showOneBook']);
 
 //CRUD Books
-$router->put('books/{id}', ['uses' => 'BookController@update']);
-$router->post('/authors/{author_id}/books', ['uses' => 'BookController@create']);
-$router->delete('books/{id}', ['uses' => 'BookController@delete']);
+$router->put('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorController@updateBook']);
+$router->post('/authors/{author_id}/books', ['uses' => 'AuthorController@createBook']);
+$router->delete('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorController@deleteBook']);
 
-//Find Comments
-$router->get('comments',  ['uses' => 'CommentController@showAllAuthors']);
-$router->get('/books/{book_id}/comments', ['uses' => 'CommentController@showOneAuthor']);
+// //Find Comments
+// $router->get('comments',  ['uses' => 'CommentController@showAllAuthors']);
+// $router->get('/books/{book_id}/comments', ['uses' => 'CommentController@showOneAuthor']);
 
-//CRUD Comments
-$router->put('comments/{id}', ['uses' => 'CommentController@update']);
-$router->post('comments', ['uses' => 'CommentController@create']);
-$router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
+// //CRUD Comments
+// $router->put('comments/{id}', ['uses' => 'CommentController@update']);
+// $router->post('comments', ['uses' => 'CommentController@create']);
+// $router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
 
 
 });
