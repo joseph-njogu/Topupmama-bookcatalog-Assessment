@@ -39,7 +39,7 @@ $router->delete('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorContro
 
 //Find Comments
 $router->get('comments',  ['uses' => 'AuthorController@showAllComments']);
-$router->get('/books/{book_id}/comments', ['uses' => 'AuthorController@showAllCommentsFromBook']);
+$router->get('/books/{book_id}/comments/{comment_id}', ['uses' => 'AuthorController@showAllCommentsFromBook']);
 
 // //CRUD Comments;
 $router->post('/books/{book_id}/comments', ['uses' => 'AuthorController@createComment']);

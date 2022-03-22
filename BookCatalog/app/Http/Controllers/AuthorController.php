@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Author;
-use App\Book;
+use App\Book; 
 use App\Comment;
 use Illuminate\Http\Request;
 use Illuminate\Database\Eloquent\ModelNotFoundException;
@@ -111,19 +111,19 @@ class AuthorController extends Controller
         $comments = Comment::all();
         return response()->json($comments, 200);
     }
-    public function showAllCommentsFromBook($author_id)
-    {
-        $book = Book::find($book_id);
-        $comments = $book->comments;
-        return response()->json($comments, 200);
-    }
-    public function showOneComment($book_id, $comment_id)
-    {
-        $book = Book::find($book_id);
-        $comment = $book->comments
-                       ->where('id', '=', $comment_id)
-                       ->first();
-        return response()->json($comment, 200);
-    }
+    // public function showAllCommentsFromBook($author_id)
+    // {
+    //     $book = Book::find($book_id);
+    //     $comments = $book->comments;
+    //     return response()->json($comments, 200);
+    // }
+    // public function showOneComment($book_id, $comment_id)
+    // {
+    //     $book = Book::find($book_id);
+    //     $comment = $book->comments
+    //                    ->where('id', '=', $comment_id)
+    //                    ->first();
+    //     return response()->json($comment, 200);
+    // }
 
 }

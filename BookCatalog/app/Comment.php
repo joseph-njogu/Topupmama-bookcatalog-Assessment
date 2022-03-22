@@ -1,7 +1,10 @@
 <?php
+
 namespace App;
+
 use Illuminate\Database\Eloquent\Model;
-class Book extends Model
+
+class Comment extends Model
 {
     /**
      * Get the author that this book belongs to
