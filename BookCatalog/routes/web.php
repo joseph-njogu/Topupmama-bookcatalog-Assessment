@@ -37,14 +37,12 @@ $router->put('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorControlle
 $router->post('/authors/{author_id}/books', ['uses' => 'AuthorController@createBook']);
 $router->delete('/authors/{author_id}/books/{book_id}', ['uses' => 'AuthorController@deleteBook']);
 
-// //Find Comments
-// $router->get('comments',  ['uses' => 'CommentController@showAllAuthors']);
-// $router->get('/books/{book_id}/comments', ['uses' => 'CommentController@showOneAuthor']);
+//Find Comments
+$router->get('comments',  ['uses' => 'AuthorController@showAllComments']);
+$router->get('/books/{book_id}/comments', ['uses' => 'AuthorController@showAllCommentsFromBook']);
 
-// //CRUD Comments
-// $router->put('comments/{id}', ['uses' => 'CommentController@update']);
-// $router->post('comments', ['uses' => 'CommentController@create']);
-// $router->delete('comments/{id}', ['uses' => 'CommentController@delete']);
+// //CRUD Comments;
+$router->post('/books/{book_id}/comments', ['uses' => 'AuthorController@createComment']);
 
 
 });
