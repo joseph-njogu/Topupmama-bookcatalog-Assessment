@@ -6,6 +6,7 @@ use App\Author;
 use App\Book;
 use App\Comment;
 use Illuminate\Http\Request;
+use Illuminate\Database\Eloquent\ModelNotFoundException;
 
 class AuthorController extends Controller
 {
@@ -82,6 +83,11 @@ class AuthorController extends Controller
     //Find books operations
     public function showAllBooks()
     {
+        try {
+        $author = Author::findOrFail($author_id);
+        } catch(ModelNotFoundException $e) {
+        return response('Author not found', 404);
+        }
         $books = Book::all();
         return response()->json($books, 200);
     }
