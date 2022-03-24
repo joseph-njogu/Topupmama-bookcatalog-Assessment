@@ -42,8 +42,10 @@ http://127.0.0.1:8000/api/authors/{id}
 http://127.0.0.1:8000/api/authors/{author_id}/books/{book_id}
 
 ## How to run the app
--- Clone the project 
--- Navigate into the project root
--- setup the database
--- Make migrations
--- Run the app and use Postman to consume the api endpoints.
+#### Clone the project 
+#### Navigate into the project root
+#### setup the database
+#### Make migrations
+#### Run the app and use Postman to consume the api endpoints.
+## Command
+- php -S localhost:8000 -t public
