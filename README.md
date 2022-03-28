@@ -2,7 +2,7 @@
 API endpoints for the catalog in php(Lumen)
 
 Live url from heroku
-https://topupmama-book.herokuapp.com/
+https://topupmama-book.herokuapp.com/api/authors
 The api has the following endpoints
 
 ## GET
